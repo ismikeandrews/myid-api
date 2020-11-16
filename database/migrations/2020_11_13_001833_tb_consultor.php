@@ -17,6 +17,11 @@ class TbConsultor extends Migration
             $table->increments('codConsultor');
             $table->string('nomeConsultor');
             $table->string('cnpjConsultor');
+            $table->integer('codTipoConsultor');
+        });
+
+        Schema::table('tbConsultor', function($table){
+            $table->foreign('codTipoConsultor')->references('codTipoConsultor')->on('tbTipoConsultor');
         });
     }
 
@@ -27,6 +32,9 @@ class TbConsultor extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbConsultor');
+        Schema::table('tbConsultor', function (Blueprint $table) {
+            $table->dropForeign(['codTipoConsultor']);
+            $table->dropIfExists();
+        });
     }
 }
