@@ -15,8 +15,8 @@ class TbCidadao extends Migration
     {
         Schema::create('tbCidadao', function(Blueprint $table){
             $table->increments('codCidadao');
-            $table->string('cpfCidadao')->unsigned();
-            $table->string('codUsuario')->unsigned();
+            $table->string('cpfCidadao');
+            $table->integer('codUsuario')->unsigned();
         });
 
         Schema::table('tbCidadao', function($table){

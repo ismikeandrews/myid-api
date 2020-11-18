@@ -17,7 +17,7 @@ class TbConsultor extends Migration
             $table->increments('codConsultor');
             $table->string('nomeConsultor');
             $table->string('cnpjConsultor');
-            $table->integer('codTipoConsultor');
+            $table->integer('codTipoConsultor')->unsigned();
         });
 
         Schema::table('tbConsultor', function($table){

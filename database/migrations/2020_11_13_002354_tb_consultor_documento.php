@@ -15,8 +15,8 @@ class TbConsultorDocumento extends Migration
     {
         Schema::create('tbConsultorDocumento', function(Blueprint $table){
             $table->increments('codConsultorDocumento');
-            $table->string('codConsultor')->unsigned();
-            $table->string('codDocumento')->unsigned();
+            $table->integer('codConsultor')->unsigned();
+            $table->integer('codDocumento')->unsigned();
         });
 
         Schema::table('tbConsultorDocumento', function($table){

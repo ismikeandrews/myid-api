@@ -17,7 +17,7 @@ class TbDocumento extends Migration
             $table->increments('codDocumento');
             $table->string('nomeDocumento');
             $table->string('imagemDocumento');
-            $table->string('codOrgaoEmissor')->unsigned();
+            $table->integer('codOrgaoEmissor')->unsigned();
         });
 
         Schema::table('tbDocumento', function($table){

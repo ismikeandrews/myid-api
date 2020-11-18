@@ -15,8 +15,8 @@ class TbFuncionario extends Migration
     {
         Schema::create('tbFuncionario', function(Blueprint $table){
             $table->increments('codFuncionario');
-            $table->string('codUsuario')->unsigned();
-            $table->string('codOrgaoEmissor')->unsigned();
+            $table->integer('codUsuario')->unsigned();
+            $table->integer('codOrgaoEmissor')->unsigned();
         });
 
         Schema::table('tbFuncionario', function($table){
