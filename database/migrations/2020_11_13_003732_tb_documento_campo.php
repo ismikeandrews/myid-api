@@ -18,6 +18,7 @@ class TbDocumentoCampo extends Migration
             $table->string('nomeCampo');
             $table->string('tipoCampo');
             $table->integer('codDocumento')->unsigned();
+            $table->timestamps();
         });
 
         Schema::table('tbDocumentoCampo', function($table){

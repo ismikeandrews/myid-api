@@ -17,6 +17,7 @@ class TbOrgaoEmissor extends Migration
             $table->increments('codOrgaoEmissor');
             $table->string('nomeOrgaoEmissor');
             $table->string('siglaOrgaoEmissor');
+            $table->timestamps();
         });
     }
 

@@ -17,6 +17,7 @@ class TbConsultorDocumento extends Migration
             $table->increments('codConsultorDocumento');
             $table->integer('codConsultor')->unsigned();
             $table->integer('codDocumento')->unsigned();
+            $table->timestamps();
         });
 
         Schema::table('tbConsultorDocumento', function($table){

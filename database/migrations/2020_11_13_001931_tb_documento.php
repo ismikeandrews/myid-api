@@ -18,6 +18,7 @@ class TbDocumento extends Migration
             $table->string('nomeDocumento');
             $table->string('imagemDocumento');
             $table->integer('codOrgaoEmissor')->unsigned();
+            $table->timestamps();
         });
 
         Schema::table('tbDocumento', function($table){

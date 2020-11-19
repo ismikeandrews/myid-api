@@ -16,6 +16,7 @@ class TbTipoUsuario extends Migration
         Schema::create('tbTipoUsuario', function(Blueprint $table){
             $table->increments('codTipoUsuario');
             $table->string('nomeTipoUsuario');
+            $table->timestamps();
         });
     }
 

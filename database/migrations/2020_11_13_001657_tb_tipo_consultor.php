@@ -16,6 +16,7 @@ class TbTipoConsultor extends Migration
         Schema::create('tbTipoConsultor', function(Blueprint $table){
             $table->increments('codTipoConsultor');
             $table->string('nomeTipoConsultor');
+            $table->timestamps();
         });
     }
 

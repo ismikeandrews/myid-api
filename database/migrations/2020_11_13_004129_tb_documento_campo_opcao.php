@@ -18,6 +18,7 @@ class TbDocumentoCampoOpcao extends Migration
             $table->string('nomeOpcao');
             $table->string('valorOpcao');
             $table->integer('codDocumentoCampo')->unsigned();
+            $table->timestamps();
         });
 
         Schema::table('tbDocumentoCampoOpcao', function($table){

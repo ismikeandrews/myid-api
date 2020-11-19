@@ -18,6 +18,7 @@ class TbUsuario extends Migration
             $table->string('loginUsuario');
             $table->string('senhaUsuario');
             $table->integer('codTipoUsuario')->unsigned();
+            $table->timestamps();
         });
 
         Schema::table('tbUsuario', function($table){

@@ -19,6 +19,7 @@ class TbDocumentoCidadao extends Migration
             $table->string('versoDocumentoCidadao');
             $table->integer('codDocumento')->unsigned();
             $table->integer('codCidadao')->unsigned();
+            $table->timestamps();
         });
 
         Schema::table('tbDocumentoCidadao', function($table){

@@ -17,6 +17,7 @@ class TbCidadao extends Migration
             $table->increments('codCidadao');
             $table->string('cpfCidadao');
             $table->integer('codUsuario')->unsigned();
+            $table->timestamps();
         });
 
         Schema::table('tbCidadao', function($table){

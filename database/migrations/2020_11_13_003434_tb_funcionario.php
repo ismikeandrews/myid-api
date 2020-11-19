@@ -17,6 +17,7 @@ class TbFuncionario extends Migration
             $table->increments('codFuncionario');
             $table->integer('codUsuario')->unsigned();
             $table->integer('codOrgaoEmissor')->unsigned();
+            $table->timestamps();
         });
 
         Schema::table('tbFuncionario', function($table){
