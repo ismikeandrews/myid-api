@@ -6,6 +6,9 @@ namespace App\Http\Controllers;
 
 use App\OrgaoEmissor;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class OrgaoEmissorController extends Controller
 {
@@ -27,5 +30,13 @@ class OrgaoEmissorController extends Controller
      */
     public function show(int $codOrgaoEmissor){
         return OrgaoEmissor::find($codOrgaoEmissor);
+    }
+
+    public function store(Request $request){
+        $orgaoEmissor = $this->validate($request, OrgaoEmissor::$rules);
+
+        OrgaoEmissor::create($orgaoEmissor);
+
+        return response()->json(['success' => true]);
     }
 }
