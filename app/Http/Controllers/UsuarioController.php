@@ -82,4 +82,48 @@ class UsuarioController extends Controller
 
         return response()->json(['success' => true]);
     }
+
+    /**
+     * Autentica um usuário e retorna o token
+     *
+     * @param string $user
+     * @param string $password
+     * @return bool|string
+     */
+    public function authenticateUser(string $user, string $password){
+        $usuario = $this->getUsuarioPorUser($user);
+
+        if ( ! $usuario ) {
+            return response()->json([
+                'error' => 'Usuário não encontrado'
+            ], 404);
+        }
+
+        if (password_verify($password, $usuario->getAttribute('senhaUsuario'))) {
+            return response()->json([
+                'codUsuario' => $usuario->codUsuario,
+            ]);
+        }
+
+        return response()->json([
+            'error' => 'Senha incorreta'
+        ], 403);
+    }
+    public function getUsuarioPorUser(string $user) {
+        return Usuario::where('loginUsuario', $user)->first();
+    }
+
+    /**
+     * Recebe os dados do login e envia para
+     * autenticação
+     *
+     * @param Request $request
+     * @return bool|string
+     */
+    public function login(Request $request) {
+        $user     = $request->loginUsuario;
+        $password = $request->senhaUsuario;
+        
+        return $this->authenticateUser($user, $password);
+    }
 }

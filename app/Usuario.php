@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Usuario extends Model
 {
-    protected $table	  = 'tbUsuario';
+    protected $table	  = 'user';
     protected $primaryKey = 'codUsuario';
     protected $fillable   = ['loginUsuario', 'senhaUsuario', 'codTipoUsuario'];
 

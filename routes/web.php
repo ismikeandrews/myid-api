@@ -17,6 +17,8 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+$router->post('/login', 'UsuarioController@login');
+
 $router->group(['prefix' => 'cidadao'], function () use ($router) {
     $router->get('/', 'CidadaoController@index');
     $router->post('/', 'CidadaoController@store');
